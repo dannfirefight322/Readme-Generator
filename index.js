@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = require("util");
-const writeFileAsync = util.promisify(fs.writeFile);
+const init = require("util");
+const writeFileAsync = init.promisify(fs.writeFile);
 inquirer
     .prompt([
         {
@@ -65,7 +65,7 @@ inquirer
 
 const content = function (response) {
     const readMe = `
-  #Title: ${response.title}
+  # Title: ${response.title}
   ## Table Of  Contents
   1.[Description](#desc)</br>
   2.[Install Information](#install)</br>
