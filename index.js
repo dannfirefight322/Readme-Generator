@@ -6,7 +6,7 @@ inquirer
     .prompt([
         {
             type: "input",
-            message: "what is your project title?",
+            message: "What is your project title?",
             name: "title",
         },
         {
@@ -38,7 +38,7 @@ inquirer
             type: 'checkbox',
             message: 'What license do you have?',
             name: 'license',
-            choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT license', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revise License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesse General Public License v2.1', 'Mozilla Publi License 2.0', 'The Unlicense'],
+            choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT license', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revise License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesse General Public License v2.1', 'Mozilla Publi License 2.0', 'The Unlicense', 'NONE'],
         },
         {
             type: "input",
@@ -58,18 +58,14 @@ inquirer
     ])
 
     //   .then((response) => JSON.stringify(response, null, "\t"))
-    .then((response) => writeFileAsync("readme.md", content(response)))
-    .then(() => console.log("readme generated"));
+    .then((response) => writeFileAsync("README.md", content(response)))
+    .then(() => console.log("README generated"));
 
-// var writeNewHTML = function (response) {
-//   fs.writeFile("index.html", thingForHTML(response), (err) =>
-//     err ? console.error(err) : console.log("successfully written index.html!")
-//   );
-// };
+
 
 const content = function (response) {
     const readMe = `
-  # Title: ${response.title}
+  #Title: ${response.title}
   ## Table Of  Contents
   1.[Description](#desc)</br>
   2.[Install Information](#install)</br>
